@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/*
+    body {} affects the content inside the body tag.
+
+    html {} is useful when you want to set base layout behavior, like:
+        Full height layout (height: 100%)
+        Smooth scrolling (scroll-behavior: smooth)
+        Font smoothing or special properties
+*/
+
+/*
+    What Should You Do Generally?
+        Universal Reset
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        
+        Root layout setup
+            html, body {
+                height: 100%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+  
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: "Roboto Slab", serif;
+    height:100%;
+}
+
+.container{
+    background: linear-gradient(135deg, #8a2be2, #4169e1);
+    display: flex; /*Currently inside the container only 1 content is there if we add display:flex to the content then it will go to the rows, always remember the structre of you Html and why things are behaving the way they are behaving.*/
+    justify-content: center;
+    align-items: center;
+
+    /*
+        height: 100%; It's redundant here but we want to make sure of it
+            Why is the image and content going outside the gradient background after setting height: 100% on .container?
+                 The Problem:
+                When you give:
+
+                .container {
+                height: 100%;
+                }
+                …it means: "Take 100% height of its parent."
+
+                Now .container is likely inside the <body>, which is already:
+
+                body, html {
+                height: 100%;
+                }
+                This should be fine  — but only if .container is a direct child of <body>.
+
+                However, if the content inside .container grows taller than the viewport, then:
+
+                .container will try to be exactly 100% of the viewport (no more).
+
+                So if child content is taller, it overflows the .container.
+
+                And that overflow goes outside the gradient background, because the gradient only paints over the 100% height.
+        
+    */
+    /*Solution is min- height: min-height allows the container to grow taller if needed — without cutting off content or overflowing. */
+    min-height: 100%;
+}
+
+/* .content{
+    text-align: center;
+} */
+
+/* 
+    .content *{
+        margin-bottom: 20px;
+    } 
+        If you're doing layout styling, this kind of universal margin might:
+        Add too much space where you didn’t want it (like inside buttons or navs).
+        Cause stacking issues when you're using flex or grid.
+
+    Solution: 
+        1: what we're doing now for small projects.
+        2: Only apply to direct children (safer)
+            .content > * {
+            margin-bottom: 20px;
+            }
+        3: Use a gap (best with flex or grid)
+            .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            }
+        
+        Why it’s amazing:
+        Automatically adds space between each child.
+        Doesn’t affect nested elements.
+        Cleaner and more modern way of doing layout.
+         - When to use:
+        You’re already using flex or grid
+        You want vertical spacing without worrying about margins
+*/
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* 
+                                without align-items: center; dino wasn't centered.
+                                Using flex-direction: column stacks elements vertically, but defaults to:
+                                align-items: stretch → children take full width (not centered)
+                                justify-content: flex-start → starts from top
+                         */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 390px; /*Minimize screen and try resizing with it without it.*/
+    
+}
+
+.dinologo{
+    width: 200px;
+    object-fit: contain; /* This is how you want to fit the object*/
+}
+
+h1{
+    color: rgb(69, 86, 81);
+    margin-bottom: 20px;
+}
+
+p{
+    color: #42382b;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"]{
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="email"]:focus{
+    outline: none; /* Because browsers apply a default outline (usually blue or black) when inputs are focused. If you want full control, remove it first.*/
+    border: 1px solid #8a2be2;
+    box-shadow: 0 0 2px #8a2be2;
+    /*
+        box-shadow: 0 0 5px red;
+        0 → horizontal offset → no shift left/right
+        0 → vertical offset → no shift up/down
+        5px → blur radius → how soft/spread the shadow is
+        red → shadow color
+    */
+
+}
+
+button{
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s
+    ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+button:hover{
+    background-color: #6734d7;
+}
+
+
+
+
+
+/*  p {
+    background-color: yellow;
+    width: 100%;
+    } 
+*/
+
+
+/*  What I meant (and should've phrased better):
+  
+    Yes, `<p>` is a **block element**.
+    What I meant was that even though the <p> block itself is centered using `align-items: center`,
+    the **text inside** it is still by default left-aligned.
+  
+    So it visually looks like the text is centered because the <p> itself is narrow and centered — but the **text inside is not truly centered unless you add: text-align: center;
+  
+    Example to demonstrate:
+  
+  p {
+    background: yellow;
+    width: 300px;
+  }
+
+  
+  Without `text-align: center`, the text inside the `<p>` will be stuck to the **left side** of the yellow block, proving it’s **not** centered text — even though the `<p>` block itself is horizontally centered by flex.
+  
+  
+    Final Truth:
+  
+  *  `<p>` = block-level
+  *  `align-items: center` = centers the whole `<p>` block inside flex container
+  *  This does **not** center the **text inside** the `<p>` block
+  *  To center the **text**, use `text-align: center`
+
+*/

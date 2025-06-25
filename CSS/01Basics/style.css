@@ -1,0 +1,17 @@
+p{
+    font-weight: lighter;
+    color: blue;
+    font-size: 25px;
+    margin: 0 auto;
+    padding: 10px;
+}
+h3{
+    color: rgb(61, 92, 4);
+    margin: auto;
+}
+/*
+    | Property  | Controls              | Inside/Outside? | Extra                           |
+    | --------- | --------------------- | --------------- | ------------------------------- |
+    | `margin`  | Space outside the box | Outside         | Can horizontally center         |
+    | `padding` | Space inside the box  | Inside          | Pushes content away from border | 
+*/

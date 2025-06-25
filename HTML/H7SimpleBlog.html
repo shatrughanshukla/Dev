@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Blog</h1>
+        <nav>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#posts">Blog Posts</a></li>
+            <li><a href="#about">About</a></li>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Welcome to My Blog</h2>
+        <p>The &lt;span&gt; HTML element is a generic inline container for phrasing content, which does not inherently
+            represent anything. It can be used to group elements for styling purposes (using the class or id
+            attributes), or because they share attribute values, such as lang.</p>
+    </section>
+
+    <section id="posts">
+        <h2>Blog Posts</h2>
+        <article>
+            <h3>Understanding the &lt;span&gt; Tag in HTML</h3>
+            <p>
+                The &lt;span&gt; HTML element is a generic inline container for phrasing content. It does not inherently
+                represent anything on its own. Instead, it's commonly used for applying CSS styles or JavaScript
+                functionality to a specific part of text.
+            </p>
+            <p>
+                For example, you can use &lt;span&gt; to change the color of one word in a paragraph without affecting
+                the rest.
+            </p>
+            <p>
+                <strong>Tip:</strong> If you're trying to display &lt;span&gt; as plain text (like in tutorials or
+                documentation), use HTML entities like <code>&amp;lt;</code> and <code>&amp;gt;</code> to make the
+                brackets appear on screen.
+            </p>
+        </article>
+        <footer>
+            <p><b>Author: </b>&COPY;Shatrughan Shukla – Web Development Enthusiast</p>
+            <p><b>Posted on: </b>June 18th 2025</p>
+        </footer>
+        <form>
+            <label>Comment Section</label>
+            <br>
+            <label>Name:</label>
+            <input type="text" name="Name">
+            <br>
+            <label>Email:</label>
+            <input type="email" name="Email">
+            <br>
+            <label>Comment:</label>
+            <textarea rows="3" cols="9">Comment here</textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <article>
+            <h3>Why Does My &lt;span&gt; Disappear in HTML?</h3>
+            <p>
+                Many beginners get confused when they try to show the text &lt;span&gt; in a paragraph, and it
+                disappears. This happens because the browser interprets it as an actual HTML tag rather than text.
+            </p>
+            <p>
+                To solve this, replace &lt; with <code>&amp;lt;</code> and &gt; with <code>&amp;gt;</code>. This tells
+                the browser to treat the characters as symbols, not tags.
+            </p>
+            <p>
+                Example: Write <code>&amp;lt;span&amp;gt;</code> to display &lt;span&gt; properly inside your content.
+            </p>
+            <footer>
+                <p><b>Author: </b>&COPY;TechWrite Studio – HTML Tips & Tricks Team</p>
+                <p><b>Posted on: </b>June 17th 2025</p>
+            </footer>
+        </article>
+        <form>
+            <label>Comment Section</label>
+            <br>
+            <label>Name:</label>
+            <input type="text" name="Name">
+            <br>
+            <label>Email:</label>
+            <input type="email" name="Email">
+            <br>
+            <label>Comment:</label>
+            <textarea rows="3" cols="9">Comment here</textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <article>
+
+            <article>
+                <h3>Displaying HTML Tags in Browser as Text</h3>
+                <p>
+                    Want to show HTML tags like &lt;p&gt;, &lt;div&gt;, or &lt;span&gt; in your webpage content? You
+                    can't just write them directly, or the browser will try to interpret them as real elements.
+                </p>
+                <p>
+                    Instead, use special characters: <code>&amp;lt;</code> for &lt;, and <code>&amp;gt;</code> for &gt;.
+                    This way, &lt;span&gt; will appear just like you want.
+                </p>
+                <p>
+                    This trick is useful when writing blog posts, tutorials, or documentation that includes HTML
+                    examples.
+                </p>
+                <footer>
+                    <p><b>Author: </b>&COPY;CodeBuddy Dev – Frontend Fixer</p>
+                    <p><b>Posted on: </b>June 16th 2025</p>
+                </footer>
+            </article>
+    </section>
+    <form>
+        <label>Comment Section</label>
+        <br>
+        <label>Name:</label>
+        <input type="text" name="Name">
+        <br>
+        <label>Email:</label>
+        <input type="email" name="Email">
+        <br>
+        <label>Comment:</label>
+        <textarea rows="3" cols="9">Comment here</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm Shatrughan Shukla, a Computer Science student at DTU. This blog is a space where I share what I
+            learn as I explore the world of web development, programming, and tech. The goal is to document my journey,
+            help beginners, and grow together as a developer community.
+        </p>
+    </section>
+
+</body>
+<footer>
+    <p>&copy;shatrughanshukla on 18th June 2025</p>
+</footer>
+</html>

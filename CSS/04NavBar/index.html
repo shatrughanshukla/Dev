@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color:  #ffffff;
+        }
+
+        .nav-Container{
+            margin-bottom: 40px;
+        }
+
+        h2{
+            margin-bottom: 10px;
+        }
+
+        .nav1{
+            /* border: 2px solid white; the correct format of writing the border si this in place of dashed, dooted, etc can come. */
+            background-color: #5d5c5c;
+            padding: 10px;
+        }
+
+        /* Now I want to remove the dots of ul lists to make visualy appealing. */
+        .nav1 ul{
+            list-style-type: none; /* n here we go!!! */
+            /* Now next step we know these are aligned on top to each other, and there are a lot of ways using which we can move their display location one of them is flex */
+            display: flex; /* The moment we said the diplay behaviour is flex automatically the default behaviour of flex box is  to align everything from left to right on the web screens*/
+            justify-content: space-around; /* evenly distributes items in a flex container with equal space around them (half-space on ends, full space between items).*/
+            align-items: center;
+            /* padding: 0;
+            margin: 0;  no need to do here as already did by universal selector*/
+        }
+
+        /* so as of now the css is bearable and we have target the ul, so now <em>I</em> want to target this li's which are inside of nav1, so we can just target the descendants */
+        /* so just let's taget them. */
+        .nav1 li{
+            /* First of fall this is already taking to much space, so first we say u get a diaplay of inline, it's not making any diff yet, but
+            it's a good think we already know li is a block element and since we're having them in one line it's a good thing to convert them into inline elements. */
+            display: inline;
+        }
+        /* Now another thing which we're targeting is all the links inside li element,so we don't just want to target li's we want to target a also but also inside nav1 n li.
+         NOTE: Always try to use smaller css it's good for longer term. */
+        .nav1 a{
+            text-decoration: none; /*all the underlines are gone.*/
+            color: #ffffff;
+            /*background-color: #d45b04;*/ /* uncomment this to understand about a padding.*/
+            padding: 5px 15px; /*a doesn't have it's default padding.*/
+            position: relative; /* Parent should be relative, if it is absolute it takes entire html body as it's parent which causes the position mismatch of the effect*/ 
+        }
+
+        .login-btn{
+            background-color: #4b4b4b;
+            color: #ffffff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+
+        .login-btn:hover{
+            background-color: #313030;
+        }
+
+        /* Now Comes up the interesting part that how can we target some elements and we want to target them on just the mouse over, so the impact we want to do is only should be capable when we hover over it. */
+        /* for this we're being introduced to two elements */
+
+        .nav1 a::after{ /* it means we want to put some elements after it, not only that we want it to be enabled only over hover effect, so for we have to say..........*/
+            /* we know that this after property always always need to have a content, rn the content will just say abc, so we can see what's happening, but we can remove this and notice nothing. */
+            /* content: "abc"; */
+            content:"";
+            /* what additionally we can do, we can put a position and in position we're using abolut, means I'm telling u absolutely where u have to appear,
+            and notice all the thing we're doing about positioning is relative to the a tag  */
+            position: absolute; /*just putting position to absoulute alone don't do any thing we have to tell where to position*/
+            bottom: 0;
+            left: 0; 
+            /*the moment we declared absolute this abc disappears because it has no idea how to appear where to appear, let's fix this*/
+            width: 100%; /* still nothing appears*/
+            height: 2px; /* still nothing appears*/
+
+            /* why are we doing all of this when nothing is showing up?
+            this is kind of boiler plate code which we'll learn, because what we're trying to do is we're trying to add a hover effect,underline effect and this abc content is supposed to appear at the very end of it.
+            and we don't want it to appear at the end of it we'll remove this our job is we want some element to appear at the end of it but I want to change it's position:
+            That's why we mentioned hey don't appear at the end of it I'll tell u where to appear and that's why we mentioned this position absolute, but it doesn't know how much width to take how much height to take, i.e. we have explicitly mentioned height and width, take the height of 2px and width of 100% and these numbers we're just eyeballing it */
+
+            /* Once we're done with this, we're gonna go ahead and add a couple of properties so that it can appear */
+            background-color: #4b4b4b;
+            
+            /* next thing is to appear at transition so that this element can actually appear finally, is two properties. */
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .nav1 a:hover::after{ /*Hey, I'll be targeting nav1 and a link which will be on the hover effect but this whole thing should be applied after what(we'll be putting some content on the after)*/
+        transform: scaleX(1);
+        }
+
+       /* Now notice here, if we go ahead and click on any of li there is very nice sutle animation going up there now to show what the content goes up, and say abc in content again, notice the abc content appears, but it appears at the very bottom and the ledt hand side as we mentioned.
+       it is appearing at absolute bottom 0, left 0, but it is not appearing directly because we have mentioned to state that it should appear after this (.nav1 a::after) one here but we're trying to make it appear on the go.
+       So, transform actually scales up from zero to one, and by 1 means 100% of it and i.e. it's taking full width of it width: 100%, and we're taking height 2 px so the content that uis appearing is only taking 2 px of the height.
+       So the content that is appearing is only takinng the 2 px of heigth we can go and make it exaggerated 12px to understand that what is going on and how is going on.
+       NOTE THE WORDS: So now this small bgc is taking 12 pixel of space. */
+    </style>
+</head>
+<body>
+    <div class="nav-Container">
+        <h2>Variation 1: Horizontal with underline effect</h2>
+        <nav class="nav1">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><button class="login-btn">Login</button></li>
+            </ul>
+        </nav>
+    </div>
+    
+</body>
+</html>
+
+<!-- Learn all but to work fast can be rely on built in components,but this is not the only path, people who love css can absolutely go bonkers in this area and do so much of the things with afters and all of that -->
+<!-- NOTE: Whenever you are learning somthing look for errors hunt for errors. -->

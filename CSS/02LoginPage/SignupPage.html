@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignupPage</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #fdfed7;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .signup{
+        background-color: #a3fc99;
+        border-radius: 18px;
+        padding: 30px;
+        width: 350px;
+        h2{
+            color: #ffffff;
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-row{
+        display: flex;
+        gap: 10px; /* for aligning f n l name in a row*/
+    }
+    .name-row input {
+        flex: 1;
+        min-width: 0; /*TO avoid overflow*/
+    }
+
+    input{
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+        border: 1px solid white;
+    }
+    button{
+        align-self: center;
+        background-color: #79ff04;
+        padding: 10px;
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+        font-size: large;
+        font-weight: bold;
+        width: 150px;
+    }
+    button:hover{
+        background-color: #368300;
+    }
+    
+</style>
+<body>
+    <div class="signup">
+        <form>
+            <h2>Sign Up</h2>
+            <input type="email" name="" id="" placeholder="Email">
+            <div class="name-row">
+                <input type="text" name="" id="" placeholder="First name">
+                <input type="text" name="" id="" placeholder="Last name">
+            </div>
+            <input type="password" name="" id="" placeholder="Password">
+            <button type="button">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

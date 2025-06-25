@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: #360048;
+            padding: 20px;
+            color: #ffffff;
+            /* border: 2px solid#ffffff; */
+        }
+
+        h2{
+            margin-bottom: 10px;
+        }
+
+        .nav3{
+            /* border: 2px solid white; */
+            background-color: rgb(41, 18, 58);
+            padding: 10px;
+        }
+
+        .nav3 ul{
+            /* So, this is a container ul contains all the li's, so this is where we want to inject the display flex property. */
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* .nav3 li{
+            display: inline;
+        }
+          
+            when you apply display: flex to <ul>,
+            then you don’t need to force li to inline, because flexbox already aligns them in a row.
+
+        */
+
+        .nav3 a{
+            text-decoration: none;
+            margin-bottom: 5px;
+            color: #ffffff;
+            display: block;
+        }
+
+        .nav3 .dropdown-content{
+            display: none;
+        }
+
+        .nav3 .dropdown:hover .dropdown-content{ /*This means here, inside nav3 I have a descendant of the class of the dropdown when it becomes hover then on this dropdown-content I want to put up a property from dispaly none to display block. */
+            display: block;
+            position: absolute;
+            padding: 10px;
+            background-color: rgb(41, 1, 55);
+
+        }
+
+        /* .nav3 .lessgotest{ I just tested the div block behaviour here
+            display: inline;
+        } */
+
+        .nav3 .login-btn{
+            padding: 5px 15px;
+            background-color: #2f0035;
+            color: #ffffff;
+        }
+
+        .nav3 .login-btn:hover{
+            background-color: #24041c;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="nav-container">
+    <h2>Variation 3: Horizontal with dropdown</h2>
+    <nav class="nav3">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown"><a href="#">About</a>
+                <!-- <div class="lessgotest"> -->
+                <div class = "dropdown-content">
+                    <a href="#">Our Story</a>
+                    <a href="#">Team</a>
+                    <a href="#">Contact</a>
+                </div>
+            </li>
+            <li><a href="#">Products</a></li>
+            <li><button class="login-btn">Login</button></li>
+        </ul>
+    </nav>
+   </div> 
+</body>
+</html>

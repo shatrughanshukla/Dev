@@ -1,0 +1,548 @@
+<!-- 
+    selectors is the ability to select any element on the webpage.
+    This is a rabbit hole, we can go as much in deeep as we want.
+    The simplest and the best way to select an element is the classes, but the professional css people urge we to at least other go through or visit other css selectors,
+    we'll be going at least 10 or 11 of them.
+
+
+    DOM in One Line:
+        DOM (Document Object Model) is the live structure of your HTML page — jo browser banata hai from your HTML code, taaki tum CSS aur JavaScript se us page ko control kar sako.
+        Think like this:
+            Tumne HTML likha:
+            <h1>Hello Rishav</h1>
+            <p>You're gonna crack it bro!</p>
+        Browser isse parse karke ek tree banata hai — jisme:
+            <html> root hota hai
+            uske andar <body>, <h1>, <p> sab branches hote hain
+        ✅ This entire live, interactive tree is called the DOM.
+
+    💡 Feel it like this:
+        HTML = dead text
+        Browser + DOM = HTML becomes alive
+    Ab CSS ya JS jab chalta hai, wo is DOM ke through page ko style ya change karta hai.
+
+-->
+
+
+<!-- 
+    1.Universal Selector
+
+        What is the Universal Selector?
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+    The * selector targets every single element on the page.
+    It applies styles to all elements — no matter what their tag name is.
+
+    Why do devs use it?
+    Mainly for a CSS Reset or normalize:
+
+    ✅ Removes default browser styles like margin, padding
+    ✅ Makes layout predictable across browsers
+    ✅ box-sizing: border-box makes sizing elements easier
+
+
+    Is it good practice?
+        Yes, but with a twist:
+        🔥 Good devs often use * at the start of the stylesheet to flush defaults.
+        ✅ It's usually paired with:
+
+            *,
+            *::before,
+            *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            }
+        🚫 But avoid overusing it deeper in CSS, as it can cause performance issues on large pages.
+
+    Use it smartly at the beginning for resetting styles, then switch to targeted selectors.
+
+-->
+
+<!--
+    2. Type Selector
+
+        Type selector means I will tell you what element I'm selecting on the web page it could be p, h1, whatever we like,
+        we're just selecting what type of element we're selecting and that's  the name type selector.
+            p{
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+-->
+
+<!-- 
+    3. Class Selector
+
+        Class selector targets elements with a specific class using a . (dot) — like:
+            .targetClass{
+                background-color: #1a1a1a;
+                
+            }
+        Applies styles to any element having class="targetClass"
+    Hitesh said this is the best selector type.
+-->
+
+<!-- 
+    4. ID Selector
+
+        The ID selector targets a single, unique element with a specific id using # (hash) — like:
+            #uniqueElement {
+                color: #e63946;
+                font-weight: bold;
+            }
+        Applies styles only to the element with id="uniqueElement".
+
+    ⚠️ Best Practice:
+        - Only one element should have a given id on a page.
+        - IDs must be unique within the HTML document.
+
+        Why IDs should be unique?
+            Because:
+                JavaScript me document.getElementById("same-id") sirf first element ko return karega.
+                CSS me bhi conflicts ho sakte hain.
+                Accessibility tools, screen readers confuse ho jaate hain.
+                Browser behavior unpredictable ho sakta hai.
+
+        | Use                             | ID        | Class           |
+        | ------------------------------- | --------  | --------------  |
+        | Target **one specific element** | ✅        | ❌              |
+        | Target **multiple elements**    | ❌        | ✅              |
+        | Use in **JavaScript selectors** | ✅ (fast) | ✅ (but slower) |
+        | Repeat across elements          | ❌        | ✅              |
+
+-->
+
+<!--
+    5. Attribute Selector
+
+        Attribute selectors target elements based on the presence or value of an attribute.
+        Syntax examples:
+            /* Selects all input elements */
+            input {
+                border: 1px solid #ccc;
+            }
+
+            /* Selects elements with a 'type' attribute */
+            [type] {
+                background-color: #f9f9f9;
+            }
+
+            /* Selects input elements with type="text" */
+            input[type="text"] {
+                border-color: #007bff;
+            }
+
+            /* Selects links that open in a new tab */
+            a[target="_blank"] {
+                color: #e67e22;
+            }
+
+        Why use attribute selectors?
+        ✅ Style elements based on their attributes (like forms, links, etc.)
+        ✅ Useful for targeting elements without classes or IDs
+
+        Attribute selector variations:
+            [attr]           — has the attribute
+            [attr="value"]   — exact value
+            [attr^="val"]    — starts with
+            [attr$="val"]    — ends with
+            [attr*="val"]    — contains
+
+        Example:
+            <input type="text" placeholder="Name">
+            <input type="password" placeholder="Password">
+            <button type="submit">Login</button>
+-->
+
+
+                <!--Advanced Selectors-->
+
+<!-- 
+    6. Descendant Selector
+
+        The descendant selector targets elements that are nested inside (descendants of) another element, at any depth.
+        Syntax:
+            parent descendant {
+                /* styles */
+            }
+        Example:
+            .container p {
+                color: #2a9d8f;
+            }
+        This will style all <p> elements that are anywhere inside an element with class="container".
+
+        Why use it?
+        ✅ Useful for applying styles only to elements within a specific section or component.
+        ✅ Helps avoid global styles leaking everywhere.
+
+        Example HTML:
+            <div class="container">
+                <p>This paragraph is styled.</p>
+                <div>
+                    <p>This one too!</p>
+                </div>
+            </div>
+            <p>This paragraph is NOT styled.</p>
+
+        ✅ Yes! If you have a <article> tag with no class or ID, and you want to style its <p> tags,
+            you'll simply write:
+                                    ADVICE: whenever there is a css selector try to read it from RIGHT to LEFT instead of LEFT to RIGHT.
+                article p {      It will be pronunced as, (All the p which are descendant of Article.)
+                color: #e76f51;
+                }
+
+            html example: 
+                <article>
+                    <p>This paragraph is inside article.</p>
+                </article>
+
+--> 
+
+<!-- 
+    7. Child Selector
+
+        The child selector targets elements that are direct children of a specified parent (not deeper descendants).
+        Syntax:
+            parent > child {
+                /* styles */
+            }
+        Example:
+            ul > li {
+                list-style-type: square;
+                color: green;
+            }
+        This will style only <li> elements that are direct children of a <ul> (not nested <li> inside sub-<ul>).
+
+        Why use it?
+        ✅ Ensures styles apply only to immediate children, not all nested elements.
+        ✅ Useful for precise layouts and avoiding unintended styling.
+
+        Example HTML:
+            <ul>
+                <li>Direct child</li>
+                <li>
+                    <ul>
+                        <li>Nested child (not styled)</li>
+                    </ul>
+                </li>
+            </ul>
+
+    ul > li {
+    color: green;
+    }
+        ->  Ye sirf direct <li> pe lag raha hai (jo outer <ul> ke andar hai)
+            oh nested <li> green kyun ho raha?
+                Woh green select nahi hua hai, lekin:
+                Uska parent <li> green ho gaya
+                Aur color ek inheritable property hai
+                Isliye uske andar jo bhi text hai (nested <ul>, <li>) — wo bhi green dikhega
+                    Parent <li> pe color lag gaya, aur uske andar ke nested elements inherit karke green dikh rahe hain — par CSS selector
+                    unhe directly target nahi kar raha.
+
+        Add this to your CSS:
+            ul ul li {
+            color: black;
+            }
+                        This will override color of all nested <li>s, and now you'll see:
+                            ul > li { color: green; } // direct children = green
+                            ul ul li { color: black; } // nested = black again
+
+One  more Example:
+        HTML Part:
+            <div>
+                <p>I'm a Child</p>
+                <p>I'm a Child</p>
+                <section>
+                    <p>I'm a Descendant</p>
+                </section>
+                <p>I'm a child</p>
+            </div>
+
+        CSS Part:
+            div > p{
+                background-color: #880404
+            }
+
+-->
+
+<!-- 
+    8. Adjacent Sibling Selector
+
+        The adjacent sibling selector targets an element that is immediately next to another element (they share the same parent and are directly next to each other).
+        Syntax:
+            element1 + element2 {
+                /* styles */
+            }
+        Example:
+            h2 + p {
+                color: #ff9800;
+            }
+        This will style any <p> element that comes immediately after an <h2>.
+
+        Why use it?
+        ✅ Useful for styling elements that follow a specific element, like adding spacing or highlighting the first paragraph after a heading.
+
+        Example HTML:
+            <h2>Section Title</h2>
+            <p>This paragraph is styled (adjacent sibling).</p>
+            <p>This paragraph is NOT styled.</p>
+-->
+
+<!-- 
+    9. General Sibling Selector
+        The general sibling selector targets all elements that are siblings of a specified element and share the same parent, appearing after it (not just the immediate next one).
+        Syntax:
+            element1 ~ element2 {
+                /* styles */
+            }
+        Example:
+            h2 ~ p {
+                color: #6a1b9a;
+            }
+        This will style every <p> element that comes after an <h2> (not just the first one), as long as they share the same parent.
+
+        Why use it?
+        ✅ Useful for applying styles to multiple elements that follow a specific element, such as all paragraphs after a heading.
+
+        Example HTML:
+            <h2>Section Title</h2>
+            <p>This paragraph is styled (general sibling).</p>
+            <div>Some content</div>
+            <p>This paragraph is also styled (general sibling).</p>
+            <p>This one too!</p>
+            <h2>Another Section</h2>
+            <p>This paragraph is styled after the second h2.</p>
+-->
+
+<!-- 
+    10. Pseudo Class Selector
+
+        Pseudo-class selectors target elements in a specific state or condition, such as when a user hovers over them, when they're the first child, or when they're focused.
+        Syntax:
+            selector:pseudo-class {
+                /* styles */
+            }
+        Common examples:
+            a:hover {
+                color: #ff5722;
+            }
+            input:focus {
+                border-color: #2196f3;
+            }
+            li:first-child {
+                font-weight: bold;
+            }
+            button:disabled {
+                opacity: 0.5;
+            }
+
+        Why use pseudo-classes?
+        ✅ Add interactivity (hover, focus, active, visited, etc.)
+        ✅ Style elements based on their position or state (first-child, last-child, nth-child, checked, etc.)
+        ✅ No need for extra classes or JavaScript for simple UI states
+
+        Example HTML:
+            <a href="#">Hover me!</a>
+            <input type="text" placeholder="Focus me!">
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+            </ul>
+            <button disabled>Can't click me</button>
+
+
+            EXAMPLE CODE:
+
+                        <!DOCTYPE html>
+                        <html>
+                        
+                        <head>
+                            <style>
+                                /* 1. Hover effect on link */
+                                a:hover {
+                                    color: #ff5722;
+                                    text-decoration: underline;
+                                }
+                        
+                                /* 2. Focus effect on input */
+                                input:focus {
+                                    border: 2px solid #2196f3;
+                                    outline: none;
+                                }
+                        
+                                /* 3. First child in a list */
+                                li:first-child {
+                                    font-weight: bold;
+                                    color: green;
+                                }
+                        
+                                /* 4. Disabled button */
+                                button:disabled {
+                                    opacity: 0.5;
+                                    cursor: not-allowed;
+                                }
+                        
+                                /* 5. Active state for button (optional extra) */
+                                button:active {
+                                    transform: scale(0.98);
+                                }
+                            </style>
+                        </head>
+                        
+                        <body>
+                        
+                            <h2>Pseudo-Class Selector Demo</h2>
+                        
+                             Hover
+                            <a href="#">Hover me!</a>
+                        
+                            <br><br>
+                        
+                             Focus
+                            <input type="text" placeholder="Focus me!">
+                        
+                            <br><br>
+                        
+                             First child
+                            <ul>
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item</li>
+                            </ul>
+                        
+                            <br>
+                        
+                             Disabled button
+                            <button disabled>Can't click me</button>
+                        
+                        </body>
+                        
+                        </html>
+
+-->
+
+<!-- 
+    11. Pseudo-element Selector
+
+        Pseudo-element selectors target a specific part of an element, such as the first line, first letter, or content before/after the element.
+        Syntax:
+            selector::pseudo-element {
+                /* styles */
+            }
+        Common examples:
+            p::first-line {
+                font-weight: bold;
+            }
+            p::first-letter {
+                font-size: 2em;
+                color: #e63946;
+            }
+            .highlight::before {
+                content: "👉 ";
+                color: #ff9800;
+            }
+            .highlight::after {
+                content: " ✔";
+                color: #43a047;
+            }
+
+        Why use pseudo-elements?
+        ✅ Style parts of elements without extra markup
+        ✅ Add decorative content before/after elements
+        ✅ Useful for typography and UI enhancements
+
+        Example HTML:
+            <p>This is a paragraph with a <span class="highlight">highlighted</span> word.</p>
+
+        Example CSS:
+            p::first-line {
+                color: #1976d2;
+            }
+            .highlight::before {
+                content: "👉 ";
+            }
+            .highlight::after {
+                content: " ✔";
+            }
+
+    One more Example:
+        <!DOCTYPE html>
+        <html>
+        
+        <head>
+            <style>
+                /* 1. First line of paragraph */
+                p::first-line {
+                    color: #1976d2;
+                    font-weight: bold;
+                }
+        
+                /* 2. First letter of paragraph */
+                p::first-letter {
+                    font-size: 2em;
+                    color: #e63946;
+                }
+        
+                /* 3. Content before highlighted span */
+                .highlight::before {
+                    content: "👉 ";
+                    color: #ff9800;
+                }
+        
+                /* 4. Content after highlighted span */
+                .highlight::after {
+                    content: " ✔";
+                    color: #43a047;
+                }
+            </style>
+        </head>
+        
+        <body>
+        
+            <h2>Pseudo-Element Selector Demo</h2>
+        
+            <p>This is a paragraph with a <span class="highlight">highlighted</span> word in it. You can style specific parts
+                like first-letter and first-line using pseudo-elements!</p>
+        
+        </body>
+        
+        </html>
+-->
+
+<!-- 
+    12. Grouping Selector
+
+        The grouping selector allows you to apply the same styles to multiple selectors at once, reducing repetition and keeping your CSS DRY (Don't Repeat Yourself).
+        Syntax:
+            selector1, selector2, selector3 {
+                /* shared styles */
+            }
+        Example:
+            h1, h2, h3 {
+                font-family: 'Segoe UI', Arial, sans-serif;
+                color: #333;
+            }
+        This will style all <h1>, <h2>, and <h3> elements with the same font and color.
+
+        Why use grouping selectors?
+        ✅ Cleaner, shorter CSS
+        ✅ Easy to maintain and update shared styles
+        ✅ Reduces duplication
+
+        Example HTML:
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <p>Paragraph text.</p>
+
+        Example CSS:
+            h1, h2, h3 {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+-->

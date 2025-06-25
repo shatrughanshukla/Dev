@@ -1,0 +1,33 @@
+<!--
+what does <meta> mean?
+    meta = metadata
+    Metadata = "data about data" → it gives information about the page, not shown on the page itself.
+    The <meta> tag always goes inside the <head> and helps browsers, search engines, or devices understand the page better.
+    
+1. <meta charset="UTF-8">
+        What it means:
+            This tells the browser:
+            "Use UTF-8 character encoding for this page."
+
+            What is UTF-8?
+            UTF-8 is a universal character set.
+
+            It supports all languages, symbols, emojis — everything.
+
+            Without this, some characters might look like � or show garbage symbols.
+            Example:
+                <meta charset="UTF-8">
+            Ensures that letters like ñ, ₹, €, ❤️ are shown correctly.
+
+2. <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        What it does:
+            Makes your website responsive — i.e., it looks good on phones, tablets, laptops.
+            Without this, your website may look zoomed out or broken on mobile.
+         Breakdown:
+            name="viewport": We’re talking about how the visible screen (viewport) behaves.
+            content="..." contains settings:
+            width=device-width: Set the page width equal to the device’s width (mobile = narrow, laptop = wide)
+            initial-scale=1.0: Zoom level is 1.0 (no zoom)
+            Example:
+                <meta name="viewport" content="width=device-width, initial scale=1.0">
+-->

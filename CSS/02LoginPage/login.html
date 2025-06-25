@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginpage</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #1a1a1a;
+        margin: 0; /*By default browser gives there own padding on first hand, we flush out those paddings, if we'll need any padding we'll give it ourselve., i.e. we set margin and padding to 0 at first. */
+        padding: 0;
+        /* height: 300px; it doesn't make much diff just takes 300 px of height as content was short it was thaking very less height and we wanted a proper card to be formed */
+        
+        /* Now it'll make diff */  
+        height: 100vh; /*10 vh means 100% of viewport height*/
+        /* flexbox is a display property which helps us move the elements much more faster and easier. */
+        display: flex; /* Turns the container into a flexbox, allowing smart alignment. */
+        justify-content: center; /* Horizontally centers items in the container (left ↔ right) */
+        align-items: center; /* Vertically centers items in the container (top ↕ bottom) */
+    }
+    .card{ 
+        background-color: #3a4040d8;
+        border-radius: 13px;
+        padding: 30px;
+        width: 300px;
+        h2{
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid black;
+        background-color: rgb(186, 181, 175);
+    }
+    button{
+        background-color: rgb(135, 135, 135);
+        color: #000000;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    button:hover{
+        background-color: rgb(75, 75, 75);;
+    }
+</style>
+<body>
+    <div class="card"><!--div.card it automatically adds a class name-->
+        <form>
+            <h2>Login</h2>
+            <input type="email" name="" id="" placeholder="Email"> <!--placeholder="Email" is temporary text shown inside the input box before the user types anything.-->
+            <input type="password" name="" id="" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div> 
+</body>
+</html>

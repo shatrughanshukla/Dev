@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 1. First line of paragraph */
+        p::first-line {
+            color: #1976d2;
+            font-weight: bold;
+        }
+
+        /* 2. First letter of paragraph */
+        p::first-letter {
+            font-size: 2em;
+            color: #e63946;
+        }
+
+        /* 3. Content before highlighted span */
+        .highlight::before {
+            content: "👉 ";
+            color: #ff9800;
+        }
+
+        /* 4. Content after highlighted span */
+        .highlight::after {
+            content: " ✔";
+            color: #43a047;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Pseudo-Element Selector Demo</h2>
+
+    <p>This is a paragraph with a <span class="highlight">highlighted</span> word in it. You can style specific parts
+        like first-letter and first-line using pseudo-elements!</p>
+
+</body>
+
+</html>

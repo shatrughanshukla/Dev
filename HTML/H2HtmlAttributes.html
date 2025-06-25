@@ -1,0 +1,80 @@
+<!--
+
+HTML Attributes
+    All HTML elements can have attributes
+    Attributes provide additional information about elements
+    Attributes are always specified in the start tag
+    Attributes usually come in name/value pairs like: name="value"
+
+HTML LINKS: HTML links are defined with the <a> tag:
+    <a href="https://www.w3schools.com">This is a link</a>
+    The link's destination is specified in the href attribute, href stands for "Hypertext REFerence".
+    Attributes are used to provide additional information about HTML elements.
+
+HTML IMAGES: HTML images are defined with the <img> tag.
+    The source file (src), alternative text (alt), width, and height are provided as attributes:
+    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+    src = source
+        It tells the browser where to find the image file.
+        This can be:
+        A file name (w3schools.jpg) if it’s in the same folder
+        Or a full URL (https://example.com/image.jpg) if it's online
+    alt="W3Schools.com"
+        alt = alternative text
+        This text shows up if the image fails to load.
+        Also helps screen readers (for visually impaired users)
+        Important for accessibility and SEO (search engines)
+    width="104" and height="142"
+        These set the size of the image in pixels.
+        You can control how big or small the image looks on the page.
+    It is a self-closing tag — it doesn’t need a </img>
+
+Style Attribute: The style attribute is used to add styles to an element, such as color, font, size, and more.
+    <p style="color:red;">This is a red paragraph.</p>
+
+Lang Attribute: You should always include the lang attribute inside the <html> tag, to declare the language of the Web page.
+    This is meant to assist search engines and browsers.
+    The following example specifies English as the language:
+        <!DOCTYPE html>
+        <html lang="en">
+        <body>
+        ...
+        </body>
+        </html>
+
+    Country codes can also be added to the language code in the lang attribute. 
+    So, the first two characters define the language of the HTML page, and the last two characters define the country.
+        <!DOCTYPE html>
+        <html lang="en-US">
+        <body>
+        ...
+        </body>
+        </html>
+                | Feature             | How `lang` helps                                   |
+                | ------------------- | -------------------------------------------------- |
+                | 🌐 SEO              | Helps search engines target correct language users |
+                | 🧑‍🦯 Accessibility    | Screen readers speak in correct language           |
+                | 🌍 Tools            | Auto-translators, spell checkers work better       |
+
+Title Attribute: The title attribute defines some extra information about an element.
+                 The value of the title attribute will be displayed as a tooltip when you mouse over the element:
+                    <p title="I'm a tooltip">This is a paragraph.</p>
+                        A tooltip is a small popup box that appears when you hover your mouse over an element (like text, image, button, etc.).
+
+//  Always Use Lowercase Attributes
+//  Always Quote Attribute Values
+//  Single or Double Quotes?
+        Double quotes around attribute values are the most common in HTML, but single quotes can also be used.
+        In some situations, when the attribute value itself contains double quotes, it is necessary to use single quotes:
+            <p title='John "ShotGun" Nelson'>
+                Or vice versa:
+            <p title="John 'ShotGun' Nelson">
+-->
+
+<!-- 🚨 Always Do This:
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    Visit Example
+</a>
+✅ Opens in new tab
+✅ Can’t hijack your site
+✅ Safer for users -->

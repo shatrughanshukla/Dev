@@ -71,12 +71,9 @@ body, html{
         
     */
     /*Solution is min- height: min-height allows the container to grow taller if needed — without cutting off content or overflowing. */
-    min-height: 100%;
+    min-height: 100%; /*This saves from overflowing, for understanding think of structure that how this card is being structured*/
 }
 
-/* .content{
-    text-align: center;
-} */
 
 /* 
     .content *{
@@ -124,6 +121,20 @@ body, html{
     max-width: 390px; /*Minimize screen and try resizing with it without it.*/
     
 }
+.content > * {
+    /* padding: 20px; */ /*This is targetting padding and gap is just adding gap, this is not redundant but together they are giving extra space i.e. I'm commenting out this.*/
+    text-align: center;
+  }
+
+/* this .content{ using flex and .content > *{ combo is not redundant.
+    You are styling:
+    
+    the container (.content) for layout and spacing
+    
+    the children (.content > *) for inner padding and text alignment.
+    
+    This is a common and good practice in real-world CSS.
+*/
 
 .dinologo{
     width: 200px;
@@ -179,42 +190,3 @@ button{
 button:hover{
     background-color: #6734d7;
 }
-
-
-
-
-
-/*  p {
-    background-color: yellow;
-    width: 100%;
-    } 
-*/
-
-
-/*  What I meant (and should've phrased better):
-  
-    Yes, `<p>` is a **block element**.
-    What I meant was that even though the <p> block itself is centered using `align-items: center`,
-    the **text inside** it is still by default left-aligned.
-  
-    So it visually looks like the text is centered because the <p> itself is narrow and centered — but the **text inside is not truly centered unless you add: text-align: center;
-  
-    Example to demonstrate:
-  
-  p {
-    background: yellow;
-    width: 300px;
-  }
-
-  
-  Without `text-align: center`, the text inside the `<p>` will be stuck to the **left side** of the yellow block, proving it’s **not** centered text — even though the `<p>` block itself is horizontally centered by flex.
-  
-  
-    Final Truth:
-  
-  *  `<p>` = block-level
-  *  `align-items: center` = centers the whole `<p>` block inside flex container
-  *  This does **not** center the **text inside** the `<p>` block
-  *  To center the **text**, use `text-align: center`
-
-*/

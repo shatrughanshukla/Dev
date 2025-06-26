@@ -42,36 +42,7 @@ body, html{
     display: flex; /*Currently inside the container only 1 content is there if we add display:flex to the content then it will go to the rows, always remember the structre of you Html and why things are behaving the way they are behaving.*/
     justify-content: center;
     align-items: center;
-
-    /*
-        height: 100%; It's redundant here but we want to make sure of it
-            Why is the image and content going outside the gradient background after setting height: 100% on .container?
-                 The Problem:
-                When you give:
-
-                .container {
-                height: 100%;
-                }
-                …it means: "Take 100% height of its parent."
-
-                Now .container is likely inside the <body>, which is already:
-
-                body, html {
-                height: 100%;
-                }
-                This should be fine  — but only if .container is a direct child of <body>.
-
-                However, if the content inside .container grows taller than the viewport, then:
-
-                .container will try to be exactly 100% of the viewport (no more).
-
-                So if child content is taller, it overflows the .container.
-
-                And that overflow goes outside the gradient background, because the gradient only paints over the 100% height.
-        
-    */
-    /*Solution is min- height: min-height allows the container to grow taller if needed — without cutting off content or overflowing. */
-    min-height: 100%; /*This saves from overflowing, for understanding think of structure that how this card is being structured*/
+    min-height: 100%; /*This saves from overflowing, for understanding think of structure that how this card is being structured, try height: 100% and see if something happens*/
 }
 
 

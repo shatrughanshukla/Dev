@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float and Clear Example</title>
+    <link rel="stylesheet" href="float-basics.css" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Left Float" class="float-left" />
+
+        <p class="first-paragraph">
+            This is the first paragraph. It wraps around the first image that is floated to the left. Notice how this
+            paragraph flows around the image.
+        </p>
+
+        <img src="https://via.placeholder.com/150" alt="Right Float" class="float-right" />
+
+        <p class="second-paragraph clear-left">
+            This is the second paragraph with <strong>clear: left</strong>. It starts below the first image
+            (left-floated).
+        </p>
+
+        <p class="second-paragraph clear-right">
+            Now this same paragraph has <strong>clear: right</strong>. It starts below the second image (right-floated).
+        </p>
+
+        <p class="second-paragraph clear-both">
+            Finally, with <strong>clear: both</strong>, the paragraph starts after both floated images.
+        </p>
+    </div>
+</body>
+
+</html>

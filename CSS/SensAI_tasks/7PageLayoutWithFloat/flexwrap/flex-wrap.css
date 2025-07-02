@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    border: 2px dashed black;
+    width: 500px;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  
+  .box{
+    box-sizing: border-box;
+    background-color: #c3dbeb;
+    border: 2px solid #608BA8;
+    height: 100px;
+  }
+  
+  .phase2 .box{
+    flex-shrink: 0;
+  }
+  .phase2 .box1{
+    flex-basis: 200px;
+  }
+  .phase2 .box2{
+    flex-basis: 200px;
+  }
+  .phase2 .box3{
+    flex-basis: 200px;
+  }
+  
+  .phase3 .box1{
+    flex-basis: 200px;
+    flex-shrink: 0;
+  }
+  .phase3 .box2{
+    flex-basis: 200px;
+    flex-shrink: 1;
+  }
+  .phase3 .box3{
+    flex-basis: 200px;
+    flex-shrink: 3;
+  }
+  .phase4 .box{
+    flex-basis: 200px;
+  }
+  .phase4 .box1{
+    flex-grow: 2;
+  }
+  .phase4 .box2{
+    flex-grow: 1;
+  }
+  .phase4 .box3{
+    flex-grow: 1;
+  }
+
+  
+/* Observe how the boxes on the wrapped lines expand according to their flex-grow values.
+On the first line, "Box 1" and "Box 2" share the available space (100px) in a 2:1 ratio. "Box 1" grows by 67px (200px + 67px), and "Box 2" grows by 33px (200px + 33px).
+On the second line, "Box 3" is the only box present, so it takes up all the available space on that line (300px), resulting in a final width of 500px (200px + 300px).
+Understand that when elements wrap to different lines, the flex-grow property applies to each line independently, distributing available space according to the flex-grow ratios of the boxes on that specific line. */
+

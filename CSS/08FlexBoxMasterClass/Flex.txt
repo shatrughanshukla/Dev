@@ -1,0 +1,7 @@
+In Flexbox there are two concepts we need to remember,
+    1. The Main Access and
+    2. The other Access.
+In the world of web whenever you say, Flexbox that means the main access is going to be run from left to right.
+    1. The Main Access is the horizontal access.
+    2. The other Access is the vertical access.
+

@@ -1,0 +1,107 @@
+<!-- 
+    CSS Grid is a layout system in CSS that helps you arrange items in rows and columns on a web page.
+    It gives you full control over where each item goes and how big it should be. 
+
+    Why was Grid needed?
+        Before Grid, developers mostly used Flexbox, float, and positioning to align things. 
+        These had serious limitations, especially for complex multi-row + multi-column layouts.
+            Here’s why Grid was needed:
+            | Reason         | Explanation                                                                                                                           |
+            | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+            | 2D Layout      | Flexbox is 1D (row or column, not both at once). Grid is 2D – it handles rows and columns together.                                   |
+            | Better Control | With Grid, you can place items in specific cells or even span them across rows/columns.                                               |
+            | Layout First   | Grid allows you to define the layout first (the structure), then place content – Flexbox is more content-first.                       |
+            | Avoid Hacks    | Before Grid, developers used hacks with `float`, `position`, or even `flex-wrap` to create grid-like systems. Grid removes this need. |
+
+    Limitations of Flexbox that Grid solves
+        | Flexbox Drawback                                     | How Grid Solves It                                                                               |
+        | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+        | Can’t handle complex multi-row/column layouts easily | Grid handles both dimensions simultaneously                                                      |
+        | Can’t align elements into precise rows & columns     | Grid gives you full control with `grid-row`, `grid-column`, etc.                                 |
+        | Hard to create full page layouts                     | Grid is perfect for page-level layouts (headers, sidebars, etc.)                                 |
+        | Alignment depends on content order                   | Grid allows absolute placement (item 1 can go into column 3, row 2) regardless of HTML order     |
+        | `flex-wrap` gets messy when wrapping                 | Grid has built-in row and column control – no wrapping confusion                                 |
+
+    Flexbox is perfect when you're working line by line (either row or column) — like placing buttons in a single row, arranging cards in one direction, or building a navbar with menu items side by side.
+    But the moment you want to create a grid-like layout (like a matrix or a newspaper-style structure), Flexbox starts getting confusing — it wraps and adjusts things, but you don’t get full control.
+    That’s where CSS Grid becomes the hero — you can clearly say, “this item should go in column 2 and row 3,” without using any tricky workarounds.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Introduction</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body, html{
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+        }
+        .item{
+            background-color: orange;
+            border: 1px solid black;
+        }
+        .grid-container{
+            background-color: gray;
+            padding: 10px;
+            display: grid;
+            /* 
+                That's the step 1, but it doesn't do much, at least the flex the moment you say display flex, it does something automatically.
+                The reason why it's not doing anything because there are two main requirement to told to this grid. How many rows you want and how many caloumns you want.
+                So you need to specify the rules that what is you expectation with rows and columns? Usualy it starts from column, and column goes from top to bottom.
+            */
+            grid-template-columns: 1fr 2fr 1fr;
+            /* grid-template-columns: 1fr 1fr 1fr;*/
+            /* 1fr -- 1 fraction, if you want them eually to be spaced out. We can just give 1 fraction to each one of them and we need to be aware how many elements aregoing to come into our webpage 
+            So, if we go ahead and try to have like fourth element automatically that's going to be shifted to the next row. Because grid doesn't know, you didn't said anything about four elements, we just said bout three elements.
+            So it's trying best to fit three elements.  The fourth one I don't know what to do it, so I'll jusy push it to the next row. That's the default behaviour.
+            */
+            grid-template-rows: 100px 200px 100px;
+            /* It's controlling that how much the width of your row should be there, so it's actually going from left to right and controlling each element there.
+               So, we have mentioned that we need, three columns. So one fraction each. And we're controlling grid templates with 100 pixels. Now, what additionally we can do is actually, you can mention 200 pixel, so what does it mean?
+               Turns out in the row, you can mention that you want to control the first row and alloted 100pxand the second row that will come, if it happens will get 200px.
+            */
+
+            gap: 2px;
+            /* It actually introduces gaps between each of these elements. Top to Bottom and Left to Right */
+            
+            grid-template-columns: repeat(3, 1fr); /* 3 columns of 1 fr */
+
+            /* What's fun about the grid is you can control the inner element. we can do that in he flexbox as well. But the controlling in the grid, each individual element is on the another level. */
+            /*
+                Now, what adiitionally we can do is we can mention grid column and grid row. Specifically, the controllability of how much row you wibb be consuming and how much column you will be consuming. That is defined in the element itself, not in the grid, not the parent one.
+            */
+        }
+        .item1{
+            grid-column: 1/3; /* start from 1 go till the start of 3 */
+            grid-row: 1/2;
+        }
+        .item2{
+            grid-column: 3/4;
+            grid-row: 1/3;
+        }
+        .item6{
+            grid-column: 2/4;
+        }
+    </style>
+</head>
+<body>
+    <!--Now we want to put some of the containers for the grid. And the way grid works is for you have a parent container below that or inside that you have multiple element that goes on.-->
+    <div class="grid-container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item item6">6</div>
+        <!--These items are actually 1 2 3. They are all one at a block because they are inside div. So they are block level element consuming it's own space.-->
+    </div>
+</body>
+</html>

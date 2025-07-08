@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .responsive-design{
+            background-color: #480048;
+            color: #ffffff;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            font-size: 24px;
+            /* Now we've to woek on how does the mobile responsive design works. Whenver we're working with the mobile responsive device, we have to actually provide some media queries.
+            These media queries are nothing. They are annotated symbols which specifically mention that hey, what do you want to happen on certain pixel size? */
+        }
+        @media(max-width: 600px){
+            body{
+                align-items: flex-start;
+            }
+            .responsive-design{
+                background-color: #3ff0fa;
+            }
+            /*This media is now considered as whole CSS and now you have to mention where you want this to appear. One good thing about this media queries is they actually take all the things from main css, So original designs or the big web designs, they actually transfers all of them as it is. But whatever you want to overwrite you have to overwrite, you just have to work on overwrite. */
+        }
+        @media (min-width: 601px) and (max-width: 1024px){
+            body{
+                align-items: center;
+            }
+            .responsive-design{
+                background-color: #ff5e00;
+            }
+        }
+        /* How will I know that it's 600px or it's 102 pixels? Usually such information is ctually available to us, but turns out the world has already done a lot of research. We don't have to it.
+        If we visit to tailwind website, they also have these breakpoints. */
+    </style>
+</head>
+<body>
+    <div class="responsive-design">
+        This div changes color based on the screen size
+    </div>
+</body>
+</html>

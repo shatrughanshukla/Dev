@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube-clone</title>
+    <link rel="stylesheet" href="youtube-clone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+     <header class="header">
+        <div class="header-left">
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            </div>
+            <button class="voice-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+
+        <div class="header-right">
+            <button class="icon-btn">
+                <i class="fas fa-add"></i>
+                <!-- <span>Create</span> -->
+            </button>
+            <button class="icon-btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="profile">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_lOlgrQYTPQQRYb-00xmNwoR4rS0OTMpKhOEyoRXnd5c78=s160-c-k-c0x00ffffff-no-rj" alt="Profile">
+            </div>
+        </div>
+     </header>
+
+     <!-- Main Content -->
+      <div class="main-container">
+         <!-- Sidebar -->
+         <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-item active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Shorts</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-receipt"></i>
+                        <span>subscriptions</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-item">
+                        <i class="fas fa-folder"></i>
+                        <span>Library</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-history"></i>
+                        <span>History</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Watch later</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Liked Videos</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>subscriptions</h3>
+                    <div class="sidebar-item">
+                        <img src="https://via.placeholder.com/24x24" alt="channel">
+                        <span>Channel 1</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://via.placeholder.com/24x24" alt="channel">
+                        <span>Channel 2</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://via.placeholder.com/24x24" alt="channel">
+                        <span>Channel 3</span>
+                    </div>
+                </div>
+         </aside>
+
+         <!-- Main Content -->
+          <main class="main-content">
+            <!-- Video Grid-->
+             <div class="video-grid">
+                <!-- Video Card 1-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 2-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">8:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn c++ in 7 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">3.3M views • 8 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 3-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 4-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 5-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 6-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 7-->
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                        <span class="duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar">
+                            <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title">Learn java in 9 hours</h3>
+                            <p class="channel-name">code with shatru</p>
+                            <p class="video-stats">2.3M views • 3 days ago</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Video Card 8-->
+                 <div class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                            <span class="duration">10:15</span>
+                        </div>
+                        <div class="video-info">
+                            <div class="channel-avatar">
+                                <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                            </div>
+                            <div class="video-details">
+                                <h3 class="video-title">Learn java in 9 hours</h3>
+                                <p class="channel-name">code with shatru</p>
+                                <p class="video-stats">2.3M views • 3 days ago</p>
+                            </div>
+                        </div>
+                 </div>
+                <!-- Video Card 9-->
+                 <div class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/320x180" alt="Video thumbnail">
+                            <span class="duration">10:15</span>
+                        </div>
+                        <div class="video-info">
+                            <div class="channel-avatar">
+                                <img src="https://via.placeholder.com/36x36" alt="channel avatar">
+                            </div>
+                            <div class="video-details">
+                                <h3 class="video-title">Learn java in 9 hours</h3>
+                                <p class="channel-name">code with shatru</p>
+                                <p class="video-stats">2.3M views • 3 days ago</p>
+                            </div>
+                        </div>
+                 </div>
+             </div>
+          </main>
+      </div>
+      <!-- Footer -->
+       <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#">About</a>
+                    <a href="#">Press</a>
+                    <a href="#">Copyright</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Creators</a>
+                </div>
+                <div class="footer-section">
+                    <a href="#">Advertise</a>
+                    <a href="#">Developers</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Policy & Safety</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Google LLC</p>
+            </div>
+       </footer>
+</body>
+</html>

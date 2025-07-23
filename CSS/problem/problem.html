@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Layout</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: yellow;
+            min-height: 100vh;
+            gap: 30px;
+        }
+
+        .flex-item {
+            flex: 0 0 200px;
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">Box 1</div>
+        <div class="flex-item">Box 2</div>
+        <div class="flex-item">Box 3</div>
+    </div>
+</body>
+
+</html>
+<!-- | Property | Value | Meaning |
+| ------------- | ---------------------------------- | ------------------ |
+| `flex-grow` | `0` | Don’t stretch |
+| `flex-shrink` | `0` | Don’t shrink |
+| `flex-basis` | `200px` | Base width = 200px |
+| Result | → Item stays 200px wide **always** | | -->

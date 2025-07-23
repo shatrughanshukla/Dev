@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #030303;
+  line-height: 1.4;
+  /* border: 2PX dashed red; */
+}
+
+.header {
+  /* border: 2px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-btn {
+  /* border: 2px solid red; */
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.2s;
+}
+.menu-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.logo {
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #030303;
+  cursor: pointer;
+}
+
+.logo i {
+  color: #ff0000;
+  font-size: 20px;
+}
+
+.search-container {
+  /* border:2px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 640px;
+  margin: 0 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  background: transparent;
+  min-width: 100px;
+}
+
+.search-btn {
+  background-color: white;
+  border: none;
+  padding: 8px 24px;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.voice-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out;
+}
+.voice-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  gap: 3px;
+}
+
+.icon-btn:hover {
+  background-color: #f2f2f2;
+}
+.icon-btn i {
+  font-size: large;
+}
+
+.profile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Main Container*/
+.main-container {
+  display: flex;
+  margin-top: 56px;
+  min-height: calc(100vh - 56px);
+}
+
+/* Sidebar-Styles */
+.sidebar {
+  /* border: 2px solid red; */
+  width: 240px;
+  background-color: white;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  border-right: 1px solid #e5e5e5;
+  z-index: 999;
+}
+.sidebar-section {
+  padding: 8px 0;
+  border-bottom: #e5e5e5;
+}
+.sidebar-section :last-child {
+  border-bottom: none;
+}
+.sidebar-section h3 {
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #606060;
+  margin-bottom: 4px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  color: #030303;
+}
+.sidebar-item:hover {
+  background-color: #f2f2f2;
+}
+
+.sidebar-item.active {
+  background-color: #e5e5e5;
+  font-weight: 500;
+}
+
+.sidebar-item i {
+  width: 24px;
+  text-align: center;
+  color: #606060;
+}
+
+.sidebar-item.active i {
+  color: #ff0000;
+}
+
+.sidebar-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* Main Content */
+.main-content {
+  /* border: 2px solid black; */
+  flex: 1; /**/
+  margin-left: 240px;
+  padding: 24px;
+  background-color: #f9f9f9;
+}
+
+/* Video Grid */
+.video-grid {
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /**/
+  gap: 16px;
+  max-width: 100%;
+}
+.video-card {
+  /* border: 2px solid blue; */
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  position: relative;
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 180px;
+  overflow: hidden; /**/
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /**/
+}
+
+.duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 6.82);
+  border-radius: 8px;
+  padding: 2px 4px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.video-info {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+.channel-avatar img {
+  /* border: 2px solid black; */
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0; /**/
+}
+
+.video-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-title {
+  /* border: 2px solid red; */
+  font-size: 14px;
+  font-weight: 500;
+  color: #030303;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  display: -webkit-box; /**/
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.channel-name {
+  color: #606060;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.video-stats {
+  font-size: 14px;
+  color: #606060;
+}
+
+/* Footer */
+.footer {
+  background-color: #f9f9f9;
+  margin-left: 240px;
+  padding: 24px;
+  border-top: 1px solid #f9f9f9;
+}
+
+.footer-content {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap; /**/
+  gap: 8px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-section a {
+  color: #606060;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+.footer-section a:hover {
+  color: #030303;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 16px;
+}
+.footer-bottom p {
+  color: #606060;
+  font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+  }
+
+  .header-left {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .search-container {
+    flex: 1 1 100px;
+    min-width: 0;
+    max-width: none;
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 0;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    flex: 1 1 120px;
+    min-width: 120px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+
+  .search-box input {
+    flex: 1 1 100px;
+    min-width: 100px;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    background: transparent;
+  }
+
+  .search-btn {
+    min-width: 36px;
+    padding: 2px 8px;
+    background-color: white;
+    border: none;
+    border-left: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-right {
+    flex-shrink: 0;
+    gap: 4px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+  }
+
+  .footer {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-left .logo span {
+    display: none;
+  }
+  .search-container {
+    margin: 0 8px;
+  }
+
+  .search-box input {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .search-btn {
+    padding: 6px 16px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .main-content {
+    padding: 8px;
+  }
+
+  .video-info {
+    padding: 8px;
+  }
+
+  .video-title {
+    font-size: 13px;
+  }
+
+  .channel-name,
+  .video-stats {
+    font-size: 12px;
+  }
+}
+
+/*
+  Extraa concepts learend:
+    Concept: Text Truncation and Line Clamping
+    Problem in UI Design:
+      Imagine you're building a:
+        ✅ Blog card
+        ✅ News app
+        ✅ Product tile
+        ✅ YouTube video title section
+      Now the description/title can be very long. But on a small card or tile, long content can overflow, mess up layout, or push other elements down.
+
+      Example:
+        <div class="card">
+          <h3>Title</h3>
+          <p>This is a long paragraph that keeps going and going and going and destroys my card layout completely because it won't stop!</p>
+        </div>
+
+      Without control, this <p> can become 10 lines tall!
+      You want it to stay fixed to 2 or 3 lines no matter what, and cut off the rest with a "..."
+
+
+    Solution = Truncation (with ellipsis)
+      🔸 What is text truncation?
+          Truncation means: “Cutting off text that overflows the container.”
+          And optionally, adding ... (called an ellipsis) to show that “there’s more content”.
+
+      🔸 What is line clamping?
+          “Clamping” means: “Show only a fixed number of lines (e.g., 2 lines), and hide the rest.”
+          Clamping is a multi-line truncation.
+          Truncation can happen in 1 line or multiple lines.
+
+    There are two types:
+    | Type                          | Use Case                          | Example Style                                                          |
+    | ----------------------------  | --------------------------------- | ---------------------------------------------------------------------- |
+    | ✅ **Single-line truncation** | For things like titles or buttons | `white-space: nowrap` + `overflow: hidden` + `text-overflow: ellipsis` |
+    | ✅ **Multi-line truncation**  | For paragraphs, descriptions      | Uses `-webkit-line-clamp` and friends                                  |
+
+    Multi-Line Truncation — The Full Concept
+      To show only 2 lines of text, and hide the rest, you write:
+
+      .truncate {
+        display: -webkit-box;                    Step 1: turn it into a special flexy-box 
+        -webkit-line-clamp: 2;                   Step 2: max 2 lines allowed
+        -webkit-box-orient: vertical;            Step 3: make sure it's vertical text lines 
+        overflow: hidden;                        Step 4: hide overflowing text 
+        text-overflow: ellipsis;                 Step 5: show "..." 
+      }
+      
+    Explanation of Each Line:
+    | Line                           | Role                                                                                           |
+    | ------------------------------ | ---------------------------------------------------------------------------------------------- |
+    | `display: -webkit-box`         | Makes the element work with `line-clamp`. It's an old flex-like model used for this technique. |
+    | `-webkit-line-clamp: 2`        | Core property that says: “Show only 2 lines”                                                   |
+    | `-webkit-box-orient: vertical` | Ensures it clamps lines vertically (top to bottom)                                             |
+    | `overflow: hidden`             | Hide the extra content                                                                         |
+    | `text-overflow: ellipsis`      | Optional — adds `...` to indicate cut-off                                                      |
+
+
+
+*/

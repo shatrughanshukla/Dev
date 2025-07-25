@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <style>
+        #color-box{
+            padding: 20px;
+            width: 370px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .color-btn{
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-box">
+        <button class="color-btn" data-color = "red">Red</button>
+        <button class="color-btn" data-color = "yellow">Yellow</button>
+        <button class="color-btn" data-color="blue">Blue</button>
+        <button class="color-btn" data-color="green">Green</button>
+    </div>
+
+    <script>
+        const box = document.getElementById("color-box");
+        const btn = document.querySelectorAll(".color-btn");
+
+        btn.forEach(function(button){
+            button.addEventListener("click", function(){
+                const color = button.getAttribute("data-color");
+                box.style.backgroundColor = color;
+            });
+        });
+    </script>
+</body>
+</html>

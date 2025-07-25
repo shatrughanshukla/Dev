@@ -18,4 +18,4 @@ hoverDiv.addEventListener("mouseover", function(){
 const inputField = document.getElementById("inputField");
 inputField.addEventListener("input", function(){
     console.log("Input event executed");
-})
+});

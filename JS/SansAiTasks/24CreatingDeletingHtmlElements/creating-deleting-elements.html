@@ -1,0 +1,41 @@
+<!--
+
+Creating and Deleting HTML Elements
+
+    Objective: Understand how to manipulate the DOM by adding and removing elements programmatically on a user action handled by event listeners.
+
+        Create the HTML Structure:
+
+            Create a new HTML file named creating-deleting-elements.html.
+            Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+            Create a separate JavaScript file named creating-deleting-elements.js.
+            Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file (creating-deleting-elements.js).
+            Inside the <body>, add a <ul> element with an ID "list". Add two buttons: One with the ID "addButton" labeled "Add Item" and another with the ID "removeButton" labeled "Remove Last Item".
+
+        Dynamically Create and Add <li> Items to the <ul>:
+
+            In JavaScript, create a function called addListItem that creates a new <li> element. Set its text content to "New Item X" where X is the current number of <li> items plus 1. Append the new <li> element to the <ul> with the ID "list".
+            Add an event listener to the "addButton" so that each time the button is clicked, a new <li> item is added to the list.
+
+        Remove the Last <li> Element:
+
+            In JavaScript, create a function called removeLastListItem that fetches the <ul> element using getElementById. Remove the last <li> element from the <ul> (if any exist) using lastElementChild and removeChild.
+            Add an event listener to the "removeButton" so that each time the button is clicked, the last <li> item is removed from the list.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <button id="addButton">Add Item</button>
+    <button id="removeButton">Remove Last Item</button>
+
+    <script src="creating-deleting-elements.js"></script>
+</body>
+</html>

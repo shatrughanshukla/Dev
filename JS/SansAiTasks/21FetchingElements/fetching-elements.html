@@ -1,3 +1,56 @@
+<!--
+
+Fetching HTML Elements
+
+    Objective: Learn selecting HTML elements using JavaScript by fetching elements based on ID, class name, tag name, and query selectors. This will help you understand how to retrieve single or multiple elements from the DOM efficiently.
+
+        Create the HTML Structure:
+
+            Create a new HTML file named fetching-elements.html.
+            Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+            Create a separate JavaScript file named fetching-elements.js.
+            Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file (fetching-elements.js).
+
+        Fetch Elements by ID:
+
+            Add a <div> element in the HTML with an ID attribute set to "myDiv" and containing the text "Hello, World!".
+            In JavaScript, use the function getElementById to fetch the element with the ID "myDiv".
+            Log the content of the fetched element to the console using the textContent property.
+
+        Fetch Elements by Class:
+
+            Add two or more <div> elements in the HTML that share the same class "myClass" but contain different text.
+            In JavaScript, use the function getElementsByClassName to fetch all elements with the class "myClass".
+            Log the contents of each fetched element to the console using the textContent property.
+
+        Observation: The getElementsByClassName function returns a collection of all matching elements, allowing you to iterate over multiple elements.
+
+        Fetch Elements by Tag Name:
+
+            Add two or more <p> elements in the HTML, each containing different text.
+            In JavaScript, use the function getElementsByTagName to fetch all <p> elements.
+            Log the contents of each fetched <p> element to the console using the textContent property.
+
+        Observation: The getElementsByTagName function returns a collection of elements based on the specified tag name, which can include multiple elements.
+
+        Fetch Elements Using Query Selector All:
+
+            Add two or more <span> elements in the HTML, each with the class "highlight" and containing different text.
+            In JavaScript, use the function querySelectorAll to fetch all <span> elements that share the class "highlight".
+            Log the contents of each fetched element to the console using the textContent property.
+
+        Observation: The querySelectorAll function returns a collection of all matching elements, allowing you to fetch multiple elements similar to getElementsByClassName but with more flexible and specific queries.
+
+        Fetch Elements Using Query Selector:
+
+            In JavaScript, use the function querySelector to fetch the first <span> element with the class "highlight".
+            Log the content of the fetched element to the console using the textContent property.
+
+        Observation: The querySelector function returns only the first matching element, making it useful when you need to select a specific element without fetching all matches.
+
+-->
+
+
 <!DOCTYPE html>
 <html>
 

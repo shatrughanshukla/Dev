@@ -1,0 +1,62 @@
+<!--
+
+Traversing DOM
+
+    Objective: Learn DOM traversal techniques by fetching and iterating over the child elements using methods like firstElementChild, nextElementSibling, lastElementChild, and children. This will enhance your understanding of navigating through the DOM structure efficiently.
+
+        Create the HTML Structure:
+
+            Create a new HTML file named traversing-dom.html.
+            Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+            Create a separate JavaScript file named traversing-dom.js.
+            Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file (traversing-dom.js).
+            Inside the <body>, create three <ul> elements, each with its own ID ("list1", "list2", and "list3"). Add multiple <li> elements inside each <ul> with different text content.
+
+        Fetch the First <ul> and Iterate Over Its <li> Elements
+
+            In JavaScript, use getElementById to fetch the first <ul> element with the ID "list1".
+            Use firstElementChild to fetch the first <li> element inside this <ul>.
+            Using nextElementSibling, iterate over all the <li> elements and log the content of each <li> to the console using textContent.
+
+        Fetch the Second <ul> and Iterate Over Its <li> Elements in Reverse Order
+
+            In JavaScript, use getElementById to fetch the second <ul> element with the ID "list2".
+            Use lastElementChild to fetch the last <li> element inside this <ul>.
+            Using previousElementSibling, iterate over all the <li> elements in reverse order and log the content of each <li> using textContent.
+
+        Fetch the Third <ul> and Access All <li> Elements
+
+            In JavaScript, use getElementById to fetch the third <ul> element with the ID "list3".
+            Use the children property to fetch all <li> elements inside the third <ul>.
+            Loop through the collection of child elements and log the content of each <li> to the console using textContent.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing DOM</title>
+</head>
+<body>
+    <ul id="list1">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Date</li>
+    </ul>
+    <ul id="list2">
+        <li>Elephant</li>
+        <li>Frog</li>
+        <li>Goat</li>
+        <li>Hyena</li>
+    </ul>
+    <ul id="list3">
+        <li>India</li>
+        <li>Japan</li>
+        <li>Russia</li>
+        <li>Korea</li>
+    </ul>
+<script src="traversing-dom.js"></script>
+</body>
+</html>

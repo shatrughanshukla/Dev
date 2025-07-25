@@ -45,3 +45,11 @@ const greetArrow = (name) => {
   return "Hello, " + name + "!";
 };
 console.log(greetArrow("Shatrughan"));
+
+/*
+ JavaScript is interpreted, not compiled like Java or C++.
+  But technically, modern JS engines (like Chrome’s V8) do just-in-time (JIT) compilation — so it's a bit of both.
+
+ But for learning:
+  Think of JavaScript as an interpreted language.
+*/

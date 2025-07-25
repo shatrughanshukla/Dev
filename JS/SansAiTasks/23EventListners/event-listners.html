@@ -1,0 +1,47 @@
+<!--
+
+Event Listeners
+
+    Objective: Learn using addEventListener in JavaScript to handle different user interactions, such as clicks, mouseovers, and input changes, by dynamically responding to events on HTML elements.
+
+        Create the HTML Structure:
+
+            Create a new HTML file named event-listeners.html.
+            Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+            Create a separate JavaScript file named event-listeners.js.
+            Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file (event-listeners.js).
+
+        Create a Button with a Click Event Listener:
+
+            Inside the <body>, add a <button> element with the text "Click Me".
+            In JavaScript, use addEventListener to attach a click event listener to the button. When the button is clicked, log "Button click event executed" to the console.
+
+        Create a <div> with a Mouseover Event Listener:
+
+            In the same HTML file, add a <div> element with the text "Hover over me".
+            In JavaScript, use addEventListener to attach a mouseover event listener to the <div>. When the mouse hovers over the <div>, log "Mouseover event on div executed" to the console.
+
+        Create an Input Element with an Input Event Listener:
+
+            Add an <input> element in the same HTML file.
+            In JavaScript, use addEventListener to attach an input event listener to the input field. Whenever the input value changes, log "Input event executed" to the console.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="click-btn">Click Me</button>
+
+    <div id="hoverDiv" style="margin-top: 10px; padding: 10px; background-color: #eee;">Hover over me</div>
+
+    <input id="inputField" type="text" placeholder="Type Something..." style="margin-top: 10px; padding: 10px; display: block;">
+
+    <script src="event-listners.js"></script>
+</body>
+</html>

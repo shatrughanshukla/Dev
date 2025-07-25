@@ -1,0 +1,55 @@
+<!--
+
+Modifying HTML Elements
+
+    Objective: Understand how to manipulate the DOM by modifying text content, styles, visibility and HTML structure programmatically on a user action handled by event listeners.
+
+        Create the HTML Structure:
+
+            Create a new HTML file named modify-elements.html.
+            Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+            Create a separate JavaScript file named modify-elements.js.
+            Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file (modify-elements.js).
+
+        Change the Text Content of an Element on Button Click:
+
+            Inside the <body>, add a <p> element with some initial text, e.g., "Original text", and a <button> element with the text "Change Text".
+            In JavaScript, use addEventListener to attach a click event listener to the button. When the button is clicked, change the text of the <p> element to "Text has been changed!".
+
+        Change the Style of an Element on Mouseover:
+
+            In the same HTML file, add a <div> element with some text, e.g., "Hover over me".
+            In JavaScript, use addEventListener to attach a mouseover event listener to the <div>. When the mouse hovers over the <div>, change its background color to yellow and its text color to blue.
+
+        Use innerHTML to Insert HTML Content Dynamically:
+
+            Add a button with the text "Insert HTML", and an empty <div> with an ID "htmlContent".
+            In JavaScript, use addEventListener to attach a click event listener to the button. When clicked, use innerHTML to insert any combination of HTML elements (such as a heading and a paragraph) into the empty <div>.
+
+        Toggle the Visibility of an Element:
+
+            Add another <p> element and a <button> labeled "Toggle Visibility".
+            In JavaScript, use addEventListener to attach a click event listener to the button. When clicked, toggle the visibility of the <p> element by switching between display: block and display: none.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="textPara">Original text</p>
+    <button id="textBtn">ChangeText</button>
+    <div id="hoverBox">Hover Over Me</div>
+
+    <button id="insertBtn">Insert HTML</button>
+    <div id="htmlContent"></div>
+
+    <p id="togglePara" style="margin-top: 10px;"> This is a toggle-able para!</p>
+    <button id="toggleBtn">Toggle Visibility</button>
+    <script src="modify-elements.js"></script>
+</body>
+</html>

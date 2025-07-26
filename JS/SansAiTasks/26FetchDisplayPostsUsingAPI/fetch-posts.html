@@ -1,0 +1,46 @@
+<!--
+
+    Fetch and Display Posts Using API
+
+        Objective: Understand how to fetch and display data from an API by making GET requests, manipulating the DOM to dynamically generate and display content, and handling errors programmatically using JavaScript.
+
+            Create the HTML and JavaScript Structure:
+
+                Create a new HTML file named fetch-posts.html.
+                Define the basic structure of an HTML document with <html>, <head>, and <body> tags.
+                Create a separate JavaScript file named fetch-posts.js.
+                Inside the <body> of your HTML, add a <script> tag and reference the JavaScript file.
+                Inside the <body>, add an empty <div> element with an ID of "posts" where all the fetched posts will be displayed.
+                This <div> will serve as the container for all the posts that will be dynamically generated through JavaScript.
+
+            Fetch All Posts from the JSONPlaceholder API:
+
+                In the JavaScript file, use the fetch() function to make a GET request to the JSONPlaceholder API endpoint: https://jsonplaceholder.typicode.com/posts.
+                Once the data is fetched, convert the response to JSON format using .json() and store the result.
+
+            Display the Posts on the Webpage:
+
+                For each post fetched from the API, create a new <div> element in JavaScript.
+                Inside each <div>, display the post's details: userId, id, title, and body.
+                Append each <div> to the container <div> in the HTML.
+
+            Handle Errors:
+
+                Implement error handling for the API request using .catch() to log any potential errors (e.g., network issues).
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Elements</title>
+</head>
+<body>
+    <h1>Fetched Posts</h1>
+    <div id="posts"></div>
+
+    <script src="fetch-posts.js"></script>
+</body>
+</html>

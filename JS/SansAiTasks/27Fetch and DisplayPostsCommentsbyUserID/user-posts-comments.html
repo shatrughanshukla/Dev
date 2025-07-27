@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Posts & Comments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    
+        input,
+        button {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    
+        .post {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f2f2f2;
+        }
+    
+        .comments {
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 2px solid #555;
+        }
+    
+        .comment {
+            background-color: #e9e9e9;
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="userIdInput" placeholder="Enter User Id">
+    <button type="button" id="fetchBtn">Fetch Posts</button>
+
+    <div id="posts"></div>
+
+    <script src="user-posts-comments.js"></script>
+</body>
+</html>

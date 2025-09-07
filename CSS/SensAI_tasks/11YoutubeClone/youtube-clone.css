@@ -545,7 +545,7 @@ body {
     Multi-Line Truncation — The Full Concept
       To show only 2 lines of text, and hide the rest, you write:
 
-      .truncate {
+      .truncate{
         display: -webkit-box;                    Step 1: turn it into a special flexy-box 
         -webkit-line-clamp: 2;                   Step 2: max 2 lines allowed
         -webkit-box-orient: vertical;            Step 3: make sure it's vertical text lines 
